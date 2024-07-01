@@ -1,4 +1,6 @@
 //your JS code here. If required.
+let clockSection = document.getElementById('clock');
+
 function currentTime(){
     let date  = new Date()
     let hours = date.getHours() 
