@@ -1,6 +1,14 @@
 //your JS code here. If required.
 let clockSection = document.getElementById('clock');
 
+function addZero(n){
+    if(n<10){
+        return "0"+n
+    }
+    return n
+
+}
+
 function currentTime(){
     let date  = new Date()
     let hours = date.getHours() 
