@@ -1,47 +1,14 @@
-//your JS code here. If required.
-let clockSection = document.getElementById('clock');
-
-function addZero(n){
-    if(n<10){
-        return "0"+n
-    }
-    return n
-
-}
-
-function currentTime(){
-    let date  = new Date()
-    let hours = date.getHours() 
-    let minutes = date.getMinutes()
-    let seconds = date.getSeconds()
-    let amPM
-
-    if(hours>12){ 
-         hours = hours - 12
-         amPM = "PM"
-    }
-    else if(hours==0){
-       hours = 12
-       amPM = "AM"
-    }
-    else if(hours<12){
-       amPM = "AM"
-    }
-    else if(hours==12){
-        amPM = "PM"
-    }
-   
-    minutes = addZero(minutes)
-    seconds = addZero(seconds)
-
-    let day = date.getDay()
-    let month = date.getMonth() 
-    let year = date.getFullYear()
-
-
-   
-    clockSection.innerHTML = month+"/"+day+"/"+year + " " + hours+":"+minutes+":"+seconds+" "+amPM
-
-}
-
-setInterval(currentTime, 1000) // 1sec = 1000ms
+function display_ct5() {
+  let x = new Date()
+  let ampm = x.getHours( ) >= 12 ? ' PM' : ' AM';
+  
+  let x1 = x.getMonth() + 1 + "/" + x.getDate() + "/" + x.getFullYear(); 
+  x1 = x1 + ", " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds() + " " + ampm;
+  document.getElementById('timer').innerHTML = x1;
+  display_c5();
+   }
+   function display_c5(){
+  let refresh=1000; // Refresh rate in milli seconds
+  mytime=setTimeout('display_ct5()', refresh)
+  }
+  display_c5()
